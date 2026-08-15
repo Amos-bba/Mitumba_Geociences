@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mitumba Geosciences SARL | Pavés en roche volcanique à Goma</title>
+
+    <meta name="description"
+          content="Mitumba Geosciences SARL produit et pose des pavés en roche volcanique taillée à Goma. Des solutions durables pour routes, parcelles et aménagements.">
+
+    <!-- Icônes -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --dark: #15181a;
+            --dark-2: #1d2123;
+            --stone: #34383a;
+            --light: #f4f2ee;
+            --muted: #8f9698;
+            --accent: #b28a5a;
+            --accent-dark: #8f6c44;
+            --white: #ffffff;
+            --border: rgba(255,255,255,0.09);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* Navigation */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+        }
+
+        nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .logo span {
+            color: #d2b084;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,.86);
+            font-size: 14px;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: #d2b084;
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            background:
+                linear-gradient(90deg, rgba(12,14,15,.92) 0%, rgba(12,14,15,.72) 48%, rgba(12,14,15,.34) 100%),
+                url("https://assets.thenewhumanitarian.org/s3fs-public/lava-rocks-workers.jpg")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding-top: 70px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 20px;
+            color: #d2b084;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 32px;
+            height: 1px;
+            background: #d2b084;
+        }
+
+        h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.02;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            max-width: 610px;
+            color: rgba(255,255,255,.78);
+            font-size: 18px;
+            margin-bottom: 34px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 48px;
+            padding: 0 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .25s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.35);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        /* Intro */
+        .intro {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 13px;
+        }
+
+        .intro h2,
+        .section-title {
+            font-size: clamp(30px, 4vw, 45px);
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            color: #b6bbbd;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .owner-box {
+            border: 1px solid var(--border);
+            padding: 30px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .owner-icon {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--border);
+            color: var(--accent);
+            margin-bottom: 22px;
+        }
+
+        .owner-box h3 {
+            margin-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .owner-box span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Services */
+        .services {
+            padding: 95px 0;
+        }
+
+        .section-head {
+            max-width: 650px;
+            margin-bottom: 45px;
+        }
+
+        .section-head p {
+            color: #666c6e;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            background: white;
+            border: 1px solid #e4e1dc;
+            padding: 32px;
+            min-height: 245px;
+            transition: .25s;
+        }
+
+        .service:hover {
+            transform: translateY(-4px);
+            border-color: #d2c4b2;
+        }
+
+        .service i {
+            color: var(--accent);
+            font-size: 24px;
+            margin-bottom: 28px;
+        }
+
+        .service h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #6e7375;
+            font-size: 14px;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 90px 0;
+            background: #e9e6e0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            grid-template-rows: 260px 260px;
+            gap: 12px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            background: #ccc;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 25px 18px 15px;
+            color: white;
+            font-size: 13px;
+            background: linear-gradient(transparent, rgba(0,0,0,.75));
+        }
+
+        /* Contact */
+        .contact {
+            padding: 90px 0;
+            background: var(--dark);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-text p {
+            color: #aeb3b5;
+            margin-bottom: 28px;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            display: flex;
+            gap: 15px;
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-list i {
+            width: 20px;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .contact-list strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .contact-list span,
+        .contact-list a {
+            color: #aeb3b5;
+            font-size: 14px;
+        }
+
+        .contact-list a:hover {
+            color: white;
+        }
+
+        .contact-card {
+            background: #202527;
+            padding: 35px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .contact-card p {
+            color: #aeb3b5;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .whatsapp {
+            background: #3b735d;
+        }
+
+        .whatsapp:hover {
+            background: #315f4e;
+        }
+
+        /* Footer */
+        footer {
+            background: #101314;
+            color: #858b8d;
+            padding: 27px 0;
+            border-top: 1px solid rgba(255,255,255,.06);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 12px;
+        }
+
+        .developer {
+            color: #aeb3b5;
+        }
+
+        .developer span {
+            color: #d2b084;
+        }
+
+        /* WhatsApp flottant */
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #3b735d;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.22);
+            z-index: 50;
+            transition: .25s;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 800px) {
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 4%;
+                right: 4%;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                background: #171a1b;
+                border: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px 18px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .intro-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 220px 220px 220px;
+            }
+
+            .gallery-item:first-child {
+                grid-row: span 2;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero-content {
+                padding-top: 50px;
+            }
+
+            h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, 250px);
+            }
+
+            .gallery-item:first-child {
+                grid-row: auto;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#accueil" class="logo">
+                Mitumba <span>Geosciences</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#entreprise">Entreprise</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- Accueil -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    Goma · Nord-Kivu
+                </div>
+
+                <h1>
+                    La pierre de Goma,
+                    façonnée pour vos projets.
+                </h1>
+
+                <p>
+                    Mitumba Geosciences SARL transforme la roche volcanique
+                    en pavés et pierres taillées destinés aux routes,
+                    parcelles et aménagements architecturaux.
+                </p>
+
+                <div class="buttons">
+                    <a class="btn btn-primary"
+                       href="https://wa.me/243991203384?text=Bonjour%20Mitumba%20Geosciences%2C%20je%20souhaite%20avoir%20plus%20d%27informations."
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Nous contacter
+                    </a>
+
+                    <a class="btn btn-outline" href="#services">
+                        Découvrir nos services
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entreprise -->
+    <section class="intro" id="entreprise">
+        <div class="container">
+            <div class="intro-grid">
+
+                <div>
+                    <div class="section-label">Notre entreprise</div>
+
+                    <h2>
+                        Une activité ancrée dans
+                        la réalité de Goma.
+                    </h2>
+
+                    <p>
+                        Notre travail commence avec une ressource naturellement
+                        présente dans notre environnement : la roche volcanique.
+                    </p>
+
+                    <p>
+                        Nous la sélectionnons, la taillons et la préparons
+                        afin d'obtenir des pierres adaptées aux travaux
+                        de pavage et aux aménagements extérieurs.
+                    </p>
+
+                    <p>
+                        L'objectif est simple : proposer une pierre locale,
+                        solide et soigneusement travaillée pour donner
+                        une finition propre aux différents projets.
+                    </p>
+                </div>
+
+                <div class="owner-box">
+                    <div class="owner-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <h3>Éric Mupanda</h3>
+                    <span>Propriétaire · Mitumba Geosciences SARL</span>
+
+                    <br><br>
+
+                    <p>
+                        Une entreprise locale spécialisée dans la production
+                        et la pose de pavés en roche volcanique taillée
+                        de très bonne qualité.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+
+            <div class="section-head">
+                <div class="section-label">Ce que nous faisons</div>
+
+                <h2 class="section-title">
+                    Des solutions en pierre
+                    pour vos espaces.
+                </h2>
+
+                <p>
+                    De la préparation des pierres jusqu'à leur mise en place,
+                    nous travaillons pour obtenir un résultat propre et durable.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service">
+                    <i class="fa-solid fa-cubes"></i>
+
+                    <h3>Pavés en roche volcanique</h3>
+
+                    <p>
+                        Production de pavés taillés à partir de roches
+                        volcaniques adaptées aux travaux d'aménagement.
+                    </p>
+                </article>
+
+                <article class="service">
+                    <i class="fa-solid fa-road"></i>
+
+                    <h3>Pavage des routes</h3>
+
+                    <p>
+                        Fourniture et pose de pavés pour les voies,
+                        cours, accès et différents espaces extérieurs.
+                    </p>
+                </article>
+
+                <article class="service">
+                    <i class="fa-solid fa-house"></i>
+
+                    <h3>Aménagement des parcelles</h3>
+
+                    <p>
+                        Des pavés adaptés aux cours, allées et espaces
+                        extérieurs des habitations et bâtiments.
+                    </p>
+                </article>
+
+                <article class="service">
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <h3>Pierres taillées</h3>
+
+                    <p>
+                        Pierres préparées et taillées pour différents
+                        besoins de construction et d'aménagement.
+                    </p>
+                </article>
+
+                <article class="service">
+                    <i class="fa-solid fa-building"></i>
+
+                    <h3>Revêtement décoratif</h3>
+
+                    <p>
+                        Utilisation de pierres soigneusement travaillées
+                        pour apporter une finition minérale aux murs.
+                    </p>
+                </article>
+
+                <article class="service">
+                    <i class="fa-solid fa-hammer"></i>
+
+                    <h3>Pose et finition</h3>
+
+                    <p>
+                        Mise en place des pavés et pierres avec une attention
+                        particulière portée à l'alignement et à la finition.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Réalisations -->
+    <section class="gallery" id="realisations">
+        <div class="container">
+
+            <div class="section-head">
+                <div class="section-label">La matière</div>
+
+                <h2 class="section-title">
+                    De la roche brute
+                    à la pierre travaillée.
+                </h2>
+
+                <p>
+                    La roche volcanique fait partie de l'identité de Goma.
+                    Elle peut être transformée en matériaux adaptés
+                    aux infrastructures et à l'architecture.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img
+                        src="https://assets.thenewhumanitarian.org/s3fs-public/lava-rocks-workers.jpg"
+                        alt="Roche volcanique à Goma">
+                    <div class="gallery-caption">
+                        Roche volcanique locale
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                        src="https://pbs.twimg.com/media/GudGjezW4AAKL2y.jpg"
+                        alt="Rue pavée à Goma">
+                    <div class="gallery-caption">
+                        Pavage urbain à Goma
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                        src="https://pbs.twimg.com/media/FdCSsFQWIAIiGo0.jpg"
+                        alt="Pierres taillées pour la construction">
+                    <div class="gallery-caption">
+                        Pierres taillées
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                        src="https://habarirdc.net/wp-content/uploads/2018/02/1-OK.jpg"
+                        alt="Travail de la pierre volcanique à Goma">
+                    <div class="gallery-caption">
+                        Travail de la pierre
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                        src="https://assets.thenewhumanitarian.org/s3fs-public/lava-rocks-workers.jpg"
+                        alt="Matériaux volcaniques">
+                    <div class="gallery-caption">
+                        Une ressource locale
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+
+            <div class="contact-grid">
+
+                <div class="contact-text">
+                    <div class="section-label">Contact</div>
+
+                    <h2 class="section-title">
+                        Parlons de votre projet.
+                    </h2>
+
+                    <p>
+                        Vous avez besoin de pavés, de pierres taillées
+                        ou d'une solution pour votre parcelle ?
+                        Contactez directement Mitumba Geosciences SARL.
+                    </p>
+
+                    <ul class="contact-list">
+
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <strong>Téléphone</strong>
+                                <a href="tel:+243991203384">
+                                    +243 991 203 384
+                                </a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>E-mail</strong>
+                                <a href="mailto:m.geosci@gmail.com">
+                                    m.geosci@gmail.com
+                                </a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <strong>Localisation</strong>
+                                <a
+                                    href="https://www.google.com/maps/search/?api=1&query=85RW%2BCVW%20Goma%2C%20Democratic%20Republic%20of%20the%20Congo"
+                                    target="_blank">
+                                    85RW+CVW Goma, Democratic Republic of the Congo
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Un projet de pavage ?</h3>
+
+                    <p>
+                        Écrivez-nous directement sur WhatsApp pour demander
+                        des renseignements sur les produits, les travaux
+                        ou les possibilités d'aménagement.
+                    </p>
+
+                    <a
+                        class="btn whatsapp"
+                        href="https://wa.me/243991203384?text=Bonjour%20Mitumba%20Geosciences%2C%20je%20voudrais%20des%20informations%20sur%20vos%20pav%C3%A9s%20et%20services."
+                        target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Écrire sur WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+
+            <div>
+                Copyright 2026, Mitumba Geosciences SARL
+            </div>
+
+            <div class="developer">
+                Design and Development by
+                <span>Barikiwa Bebuta Amos</span>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<a
+    class="floating-whatsapp"
+    href="https://wa.me/243991203384"
+    target="_blank"
+    aria-label="Contacter Mitumba Geosciences sur WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+        });
+    });
+</script>
+
+</body>
+</html>
